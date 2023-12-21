@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HealthCare</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script>
+            var finalerr = true;
+            function validate() {
+
+              var uid = document.getElementById('uid').value;
+              var email = document.getElementById('email').value;
+              var password = document.getElementById('password').value;
+              const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+              document.getElementById('errMessage').innerHTML = "";
+              if (uid === "") {
+                document.getElementById("errMessage").innerHTML = "Please fill in your username!";
+                return;
+              } if (email === "") {
+                document.getElementById("errMessage").innerHTML = "Please fill in your email!";
+                return;
+              } else if (!emailPattern.test(email)) {
+                document.getElementById("errMessage").innerHTML = "Please enter a valid email address!";
+                return;
+              } if (password === "") {
+                document.getElementById("errMessage").innerHTML = "Please fill in your password!";
+                return;
+              }
+            }
+
+            function finalValidate() {
+              var error = new Array;
+              error[0] = document.getElementById("errMessage").innerHTML;
+              var count = 0;
+              var i = 0;
+
+              for (const errMessage of error) {
+                if (errMessage === "") {
+                  count = count + 1;
+                }
+              }
+
+              if (count === 1) {
+                finalerr = false;
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="navUpper">
+                <div class="logo">
+                    <a class="GoHomeLink" href="ProjectMainPage.html">
+                        <img class="navLogo" src="img/logo.png" alt="">
+                        <h1 class="textLogo">LifeFit</h1>
+                    </a>
+                </div>
+                <div class="btnlinks">
+                    <div class="contactInfo">
+                        <img id="contactLogo" src="img/phoneicon.png" alt="">93597765
+                    </div>
+                    <a href="ProjectLogin.html">
+                        <div class="LoginButton">
+                            <span class="LoginButtonText">Login</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr class="navSeparator">
+            <div class="navLower">
+                <a class="navBarAboutUs" href="ProjectAboutUsPage.html">About Us</a>
+                <a class="navBarOurServices" href="ProjectOurServicesPage.html">Our Services</a>
+                <a class="navBarContactUs" href="ProjectContactUsPage.html">Contact Us</a>
+                <a class="navBarDiscussion" href="index.php" id="navBarDiscussion" hidden>Discussion</a>
+            </div>
+        </div>
+        <div>
+            <div class="login-container">
+              <div class="login-title">
+                <p>Register</p>
+              </div>
+              <div>
+                <form action="">
+                  <div class="username-text">
+                    Username
+                  </div>
+                  <div class="username-container">
+                    <input id="uid" class="username" type="text" name="username">
+                  </div>
+                  <hr class="username-rule">
+                  <div class="username-text">
+                    Email
+                  </div>
+                  <div class="username-container">
+                    <input id="email" class="username" type="text" name="username">
+                  </div>
+                  <hr class="username-rule">
+                  <div class="password-text">
+                    Password
+                  </div>
+                  <div class="password-container">
+                    <input id="password" class="password" type="password" name="password">
+                  </div>
+                  <hr class="password-rule">
+                </form>
+
+                <div class="login-button-container">
+                  <button id="registerRecipient" class="login-button" onclick="validate(); finalValidate();">
+                    Register as CareRecipients
+                  </button>
+                  <button id="registerGiver" class="login-button" onclick="validate(); finalValidate();">
+                    Register as Caregiver
+                  </button>
+                </div>
+                <div class="error-message-container">
+                  <p class="error-message" id="errMessage"></p>
+                </div>
+
+              </div>
+
+              <div class="register-top-text">
+                Already Have An Account?
+              </div>
+              <div class="register-container">
+                <a class="register-link" href="ProjectLogin.html">Login</a>
+              </div>
+            </div>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('LoggedIn');
+            if (isLoggedIn === 'CareRecipientIN') {
+              document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }else if (isLoggedIn === 'CareGiverIN'){
+                document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }
+          });
+          </script>
+          <script type="module">
+
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+            const firebaseConfig = {
+
+              apiKey: "AIzaSyA_SUMMwL5908zoqMseVcyZ6PmAdN73UYE",
+
+              authDomain: "lifefit-c080f.firebaseapp.com",
+
+              databaseURL: "https://lifefit-c080f-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+              projectId: "lifefit-c080f",
+
+              storageBucket: "lifefit-c080f.appspot.com",
+
+              messagingSenderId: "985989767102",
+
+              appId: "1:985989767102:web:7e102f501662b62dc2e3ef",
+
+              measurementId: "G-VV0YRRE3R7"
+
+            };
+
+
+            const app = initializeApp(firebaseConfig);
+
+            const analytics = getAnalytics(app);
+
+            import { getDatabase, ref, set, child, update, remove }
+              from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+            const db = getDatabase();
+
+            //----------------------References------------------------------------------------//
+
+            var userId = document.getElementById("uid");
+            var password = document.getElementById("password");
+            var Email = document.getElementById("email");
+            var registerRecipientBtn = document.getElementById("registerRecipient");
+            var registerGiverBtn = document.getElementById("registerGiver");
+
+            //----------------------INSERT DATA FUNCTION----------------------------------------//
+
+            export function registerRecipient() {
+              if (finalerr === false) {
+                set(ref(db, "Carerecipients/" + password.value), {
+                  username: userId.value,
+                  password: password.value,
+                  email: Email.value
+                })
+                  .then(() => {
+                    alert("data stored successfully");
+                    userId.value = "";
+                    password.value = "";
+                    Email.value = "";
+                    finalerr = true;
+                  })
+                  .catch((error) => {
+                    alert("unsuccessful, error" + error);
+                  });
+              }
+            }
+
+            export function registerGiver() {
+              if (finalerr === false) {
+                set(ref(db, "Caregivers/" + password.value), {
+                  username: userId.value,
+                  password: password.value,
+                  email: Email.value
+                })
+                  .then(() => {
+                    alert("data stored successfully");
+                    userId.value = "";
+                    password.value = "";
+                    Email.value = "";
+                    finalerr = true;
+                  })
+                  .catch((error) => {
+                    alert("unsuccessful, error" + error);
+                  });
+              }
+            }
+
+            //---------------------assign event to btn-----------------------------------------------//
+
+            registerRecipientBtn.addEventListener('click', registerRecipient);
+            registerGiverBtn.addEventListener('click', registerGiver);
+            
+          </script>
+    </body>
+</html>

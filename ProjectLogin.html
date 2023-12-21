@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HealthCare</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <script>
+            var finalerr = true;
+            function validate() {
+              var email = document.getElementById('email').value;
+              var password = document.getElementById('password').value;
+              const emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              document.getElementById('errMessage').innerHTML = "";
+              if (email === "") {
+                document.getElementById("errMessage").innerHTML = "Please fill in your email!";
+                return;
+              } else if (!emailPattern.test(email)) {
+                document.getElementById("errMessage").innerHTML = "Please enter a valid email address!";
+                return;
+              } if (password === "") {
+                document.getElementById("errMessage").innerHTML = "Please fill in your password!";
+                return;
+              }
+            }
+            function finalValidate() {
+              var errorMessages = document.getElementById("errMessage").innerHTML;
+              if (errorMessages === "") {
+                finalerr = false;
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="nav">
+            <div class="navUpper">
+                <div class="logo">
+                    <a class="GoHomeLink" href="ProjectMainPage.html">
+                        <img class="navLogo" src="img/logo.png" alt="">
+                        <h1 class="textLogo">LifeFit</h1>
+                    </a>
+                </div>
+                <div class="btnlinks">
+                    <div class="contactInfo">
+                        <img id="contactLogo" src="img/phoneicon.png" alt="">93597765
+                    </div>
+                    <a href="ProjectLogin.html">
+                        <div class="LoginButton">
+                            <span class="LoginButtonText">Login</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <hr class="navSeparator">
+            <div class="navLower">
+                <a class="navBarAboutUs" href="ProjectAboutUsPage.html">About Us</a>
+                <a class="navBarOurServices" href="ProjectOurServicesPage.html">Our Services</a>
+                <a class="navBarContactUs" href="ProjectContactUsPage.html">Contact Us</a>
+                <a class="navBarDiscussion" href="index.php" id="navBarDiscussion" hidden>Discussion</a>
+            </div>
+        </div>
+        <div>
+            <div class="login-container">
+              <div class="login-title">
+                <p>Login</p>
+              </div>
+              <div class="login-form-container">
+                <form id="login-form" class="login-form" action="">
+                  <div class="email-text">
+                    Email
+                  </div>
+                  <div class="email-container">
+                    <input class="email" id="email" type="text" name="email">
+                  </div>
+                  <hr class="email-rule">
+                  <div class="password-text">
+                    Password
+                  </div>
+                  <div class="password-container">
+                    <input class="password" id="password" type="password" name="password">
+                  </div>
+                  <hr class="password-rule">
+                </form>
+
+                <div class="login-button-container-two">
+                  <button class="login-button" id="login-button" onclick="validate(); finalValidate();">
+                    LOGIN
+                  </button>
+                </div>
+              </div>
+              <div class="error-message-container">
+                <p class="errMessage" id="errMessage"></p>
+              </div>
+              <div class="register-top-text">
+                Don't Have An Account?
+              </div>
+              <div class="register-container">
+                <a class="register-link" href="ProjectRegister.html">Register</a>
+              </div>
+            </div>
+          </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('LoggedIn');
+            if (isLoggedIn === 'CareRecipientIN') {
+              document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }else if (isLoggedIn === 'CareGiverIN'){
+                document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }
+          });
+        </script>
+        <script type="module">
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+            const firebaseConfig = {
+
+              apiKey: "AIzaSyA_SUMMwL5908zoqMseVcyZ6PmAdN73UYE",
+              authDomain: "lifefit-c080f.firebaseapp.com",
+              databaseURL: "https://lifefit-c080f-default-rtdb.asia-southeast1.firebasedatabase.app",
+              projectId: "lifefit-c080f",
+              storageBucket: "lifefit-c080f.appspot.com",
+              messagingSenderId: "985989767102",
+              appId: "1:985989767102:web:7e102f501662b62dc2e3ef",
+              measurementId: "G-VV0YRRE3R7"
+
+            };
+
+
+            // Initialize Firebase
+
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+
+
+            import { getDatabase, ref, set, child, update, remove, get, }
+              from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+            const db = getDatabase();
+
+            //----------------------References------------------------------------------------//
+
+            var password = document.getElementById("password");
+            var Email = document.getElementById("email");
+            var loginBtn = document.getElementById("login-button");
+
+            //----------------------INSERT DATA FUNCTION----------------------------------------//
+
+            function login() {
+              if (finalerr === false) {
+                const recipientRef = ref(db, 'Carerecipients');
+                const giverRef = ref(db, 'Caregivers');
+
+                get(child(recipientRef, password.value))
+                  .then((snapshot) => {
+                    if (snapshot.exists()) {
+                      const recipient = snapshot.val();
+                      if (recipient.email === Email.value) {
+                        sessionStorage.setItem('LoggedInUserPassword', password.value);
+                        sessionStorage.setItem('LoggedInUserEmail', Email.value);
+                        sessionStorage.setItem('LoggedIn', 'CareRecipientIN');
+                        window.location.href = "ProjectMainPage.html";
+                      } else {
+                        document.getElementById("errMessage").innerHTML = "Invalid email or password";
+
+                      }
+                    } else {
+                      //-------------------------------------------------
+                      get(child(giverRef, password.value))
+                        .then((snapshot) => {
+                          if (snapshot.exists()) {
+                            const giver = snapshot.val();
+                            if (giver.email === Email.value) {
+                              sessionStorage.setItem('LoggedInUserPassword', password.value);
+                              sessionStorage.setItem('LoggedInUserEmail', Email.value);
+                              sessionStorage.setItem('LoggedIn', 'CareGiverIN');
+                              window.location.href = "ProjectMainPage.html";
+                            } else {
+                              document.getElementById("errMessage").innerHTML = "Invalid email or password";
+
+                            }
+                          } else {
+                            document.getElementById("errMessage").innerHTML = "Invalid email or password";
+                          }
+                        }).catch((error) => {
+                          console.error(error);
+                        });
+                    }
+                    //------------------------------------------------
+                  }).catch((error) => {
+                    console.error(error);
+                  });
+              }
+            }
+
+            //---------------------assign event to btn-----------------------------------------------//
+
+            loginBtn.addEventListener('click', login);
+
+          </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HealthCare</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="ProjectScript.js"></script> 
+    </head>
+    <body>
+        <div class="nav">
+        <div class="navUpper">
+            <div class="logo">
+                <a class="GoHomeLink" href="ProjectMainPage.html">
+                    <img class="navLogo" src="img/logo.png" alt="">
+                    <h1 class="textLogo">LifeFit</h1>
+                </a>
+            </div>
+            <div class="btnlinks">
+                <div class="contactInfo">
+                    <img id="contactLogo" src="img/phoneicon.png" alt="">93597765
+                </div>
+                <a href="ProjectLogin.html">
+                    <div class="LoginButton">
+                        <span class="LoginButtonText">Login</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr class="navSeparator">
+        <div class="navLower">
+            <a class="navBarAboutUs" href="ProjectAboutUsPage.html">About Us</a>
+            <a class="navBarOurServices" href="ProjectOurServicesPage.html">Our Services</a>
+            <a class="navBarContactUs" href="ProjectContactUsPage.html">Contact Us</a>
+            <a class="navBarDiscussion" href="index.php" id="navBarDiscussion" hidden>Discussion</a>
+        </div>
+        </div>
+        <div class="ContactUsPage">
+            <div class="ContactUsInfomationContainer">
+                <p class="FindUsAtText">Find Us At</p>
+                <p class="AddressText">500 Dover Rd, Singapore 139651</p>
+                <p class="OurSocialMediaText">Our Social Media</p>
+                <div class="SocialMediaContainer">
+                    <a href="https://www.facebook.com/singaporepolytechnic">
+                        <img class="SocialMediaIcons" src="img/FacebookIcon.png" alt="">
+                    </a>
+                    <a href="https://www.instagram.com/singaporepoly/">
+                        <img class="SocialMediaIcons" src="img/InstagramIcon.png" alt="">
+                    </a>
+                    <a href="https://twitter.com/SingaporePoly">
+                        <img class="SocialMediaIcons" src="img/TwitterIcon.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div id="mapdiv">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.775867639416!2d103.7749745745596!3d1.3097810617041798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da1a602ff17c15%3A0xa9545dd23993859e!2sSingapore%20Polytechnic!5e0!3m2!1sen!2ssg!4v1690857436462!5m2!1sen!2ssg" width="580" height="300" style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('LoggedIn');
+            if (isLoggedIn === 'CareRecipientIN') {
+              document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }else if (isLoggedIn === 'CareGiverIN'){
+                document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }
+          });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HealthCare</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="ProjectScript.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+<body>
+    <div class="nav">
+        <div class="navUpper">
+            <div class="logo">
+                <a class="GoHomeLink" href="ProjectMainPage.html">
+                    <img class="navLogo" src="img/logo.png" alt="">
+                    <h1 class="textLogo">LifeFit</h1>
+                </a>
+            </div>
+            <div class="btnlinks">
+                <div class="contactInfo">
+                    <img id="contactLogo" src="img/phoneicon.png" alt="">93597765
+                </div>
+                <a href="ProjectLogin.html">
+                    <div class="LoginButton">
+                        <span class="LoginButtonText">Login</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr class="navSeparator">
+        <div class="navLower">
+            <a class="navBarAboutUs" href="ProjectAboutUsPage.html">About Us</a>
+            <a class="navBarOurServices" href="ProjectOurServicesPage.html">Our Services</a>
+            <a class="navBarContactUs" href="ProjectContactUsPage.html">Contact Us</a>
+            <a class="navBarDiscussion" href="index.php" id="navBarDiscussion" hidden>Discussion</a>
+        </div>
+    </div>
+    <div class="Homepage">
+        <div class="HomepageContainer1">
+            <h1 class="Heading">Care wherever you are</h1>
+            <p class="subHeading">Come and find out why LifeFit is Singaporeans #1 way of taking control of their health.</p>
+            <a href="https://github.com/xkvnxx/LifeFit">
+                <div class="getAppButtonHomepage">
+                    <h3 class="getAppButtonHomepageText">Get Care Now</h3>
+                </div>
+            </a>
+            <p class="availableontext">Available on : </p>
+            <a href="https://www.apple.com/sg/app-store/">
+                <img class="appstorelogoHomepage" src="img/app-store-badge.svg" alt="">
+            </a>
+            <a href="https://play.google.com">
+                <img class="googleplaylogoHomepage" src="img/google-play-badge.svg" alt="">
+            </a>
+        </div>
+        <div class="HomepageContainer2">
+            <img class="HomepageContainer2Img" alt="" src="img/HomepageImage.png">
+        </div>
+    </div>
+    <div class="WavyCurve1">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <div class="someQualities">
+        <div class="QualityContainer">
+            <div class="iconcontainerQualities">
+                <img class="iconiniconcontainer" alt="" src="img/caregivericon.png">
+            </div>
+            <div class="textcontainerQualities">Largest pool of Caregivers</div>
+        </div>
+        <div class="QualityContainer">
+            <div class="iconcontainerQualities">
+                <img class="iconiniconcontainer" alt="" src="img/heartcareicon.png">
+            </div>
+            <div class="textcontainerQualities">Round-the-clock care options</div>
+        </div>
+        <div class="QualityContainer">
+            <div class="iconcontainerQualities">
+                <img class="iconiniconcontainer" alt="" src="img/starratingicon.png">
+            </div>
+            <div class="textcontainerQualities"><span id="avgRating">4.7</span>  &nbspstars rating</div>
+        </div>
+        <div class="QualityContainer">
+            <div class="iconcontainerQualities">
+                <img class="iconiniconcontainer" alt="" src="img/locationgetcareicon.png">
+            </div>
+            <div class="textcontainerQualities">Get care anywhere</div>
+        </div>
+    </div>
+    <div class="OurServices">
+        <div class="TypesofServicesContainer">
+            <div id="OurServicesText">Our <br> Services</div>
+            <div class="TypeofServiceCard" onclick="showServiceInformation('Home Personal Care')">
+                <img class="TypeofServiceIcon" src="img/HomePersonalCareIcon.png" alt="">
+                <p class="ServiceCardText">Home <br> Personal Care
+            </div>
+            <div class="TypeofServiceCard" onclick="showServiceInformation('Home Therapy')">
+                <img class="TypeofServiceIcon" src="img/HomeTherapyIcon.png" alt="">
+                <p class="ServiceCardText">Home <br> Therapy
+            </div>
+            <div class="TypeofServiceCard" onclick="showServiceInformation('Home Doctor')">
+                <img class="TypeofServiceIcon" src="img/HomeDoctorIcon.png" alt="">
+                <p class="ServiceCardText">Home <br> Doctor
+            </div>
+            <div class="TypeofServiceCard" onclick="showServiceInformation('Tele Consultation')">
+                <img class="TypeofServiceIcon" src="img/TeleConsultationIcon.png" alt="">
+                <p class="ServiceCardText">Tele- <br> Consultation
+            </div>
+            <div class="TypeofServiceCard" onclick="showServiceInformation('Medicine Delivery')">
+                <img class="TypeofServiceIcon" src="img/MedicineDeliveryIcon.png" alt="">
+                <p class="ServiceCardText">Medicine <br> Delivery
+            </div>
+        </div>
+        <div class="ServicesInfomationsContainer">
+            <div class="ServicesInfomations">
+                <p id="ServicesInfomationsTitle">Home Personal Care</p>
+                <p id="ServicesInfomationsDescription">Our trained local caregivers help to assist you and your loved one's daily activities for a safe and independent living at home. This includes eating, cleaning, toileting and transferring.</p>
+            </div>
+            <img id="ServicesInfomationsImage" src="img/HomePersonalCareImage.png" alt="">
+        </div>
+    </div>
+    <div class="explainationhowtouse">
+        <div class="explainationhowtouseText">How LifeFit works</div>
+        <div class="StepsToUseContainer">
+            <div class="StepContainer">
+                <img class="StepsImages" src="img/Step1Image.png" alt="">
+                <p class="StepsDescription">Download the LifeFit mobile app</p>
+            </div>
+            <div class="StepContainer">
+                <img class="StepsImages" src="img/Step2Image.png" alt="">
+                <p class="StepsDescription">Book a service and get matched to a Caregiver</p>
+            </div>
+            <div class="StepContainer">
+                <img class="StepsImages" src="img/Step3Image.png" alt="">
+                <p class="StepsDescription">Receive care from our Caregiver</p>
+            </div>
+            <div class="StepContainer">
+                <img class="StepsImages" src="img/Step4Image.png" alt="">
+                <p class="StepsDescription">Book, manage and pay for visits all in one place</p>
+            </div>
+        </div>
+        <a href="https://github.com/xkvnxx/LifeFit">
+            <div class="getAppButtonExplaination">
+                <h3 class="getAppButtonExplainationText"> Get LifeFit App </h3>
+            </div>
+        </a>
+    </div>
+    <div class="PerksofLifeFit">
+        <div class="PerksofLifeFitText">Why People Choose LifeFit</div>
+        <div class="PerksRow">
+            <div class="PerkConatainer">
+                <img class="PerksIcon" alt="" src="img/ZeroCommitmentIcon.png">
+                <h4 class="PerkTitle">Zero Commitment</h4>
+                <p class="PerkDescription">Book flexible services with no ongoing commitment required.</p>
+            </div>
+            <div class="PerkConatainer">
+                <img class="PerksIcon" alt="" src="img/TransparentPricingIcon.png">
+                <h4 class="PerkTitle">Transparent Pricing</h4>
+                <p class="PerkDescription">Know the exact price of the services before even <br> booking.</p>
+            </div>
+        </div>
+        <div class="PerksRow">
+            <div class="PerkConatainer">
+                <img class="PerksIcon" alt="" src="img/DedicatedCareProfessionalsIcon.png">
+                <h4 class="PerkTitle">Dedicated Care Professionals</h4>
+                <p class="PerkDescription">Receive quality care from a carefully selected pool of experienced Caregivers.</p>
+            </div>
+            <div class="PerkConatainer">
+                <img class="PerksIcon" alt="" src="img/CareAdvisorIcon.png">
+                <h4 class="PerkTitle">Care Advisor</h4>
+                <p class="PerkDescription">Let LifeFit Care Advisors assist you in choosing services specific to your needs.</p>
+            </div>
+        </div>
+        <a href="https://github.com/xkvnxx/LifeFit">
+            <div class="getAppButtonPerks">
+                <h3 class="getAppButtonPerksText"> Get Care Now </h3>
+            </div>
+        </a>
+    </div>
+    <div class="div1">
+        <h1>The best care for you and you loved ones</h1>
+        <h2>A simple and fast way to ensure your loved ones are well taken care of</h2>
+        
+    </div>
+    <div class="div2">
+        <br>
+        <table class="table1">
+            <tr>
+                <td>
+                    <img src="img/mainImage.png" class="logoimage" alt="">
+                </td>
+                <td>
+                    <p class="contactWith">Get in Contact with a <br> Healthcare Professional in <br>mere seconds</p>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <br>
+        <div class="cardDarkBlue">
+            <br>
+            <p class="professionallyScreened"> Our Healthcare Professionals are carefully screened to ensure you get the best care</p>
+            <br>
+            <table class="table2">
+                <tr>
+                    <td class="circle">1</td><td>&nbsp&nbsp  -------&nbsp&nbsp</td><td class="circle">2</td>
+                    <td>&nbsp&nbsp------- &nbsp&nbsp</td><td class="circle">3</td><td>&nbsp&nbsp-------&nbsp&nbsp</td><td class="circle">4</td>
+                    <td>&nbsp&nbsp ------- &nbsp&nbsp</td><td class="circle">5</td><td>&nbsp&nbsp ------- &nbsp&nbsp</td><td class="circle">6</td>
+                </tr>
+            </table>
+
+            <span style="color:white">Application</span>
+            <span class="spacing">Interview</span>
+            <span class="spacing">Screening</span>
+            <span class="spacing">Training</span>
+            <span class="spacing">Onboarding</span>
+            <span class="spacing">Review</span>
+            <br><br><br><br>
+        </div>
+    </div>
+
+    <div class="div3">
+        <table class="table3">
+            <tr>
+                <td>
+                    <br>
+                    <h3 class="div3Title">Our App</h3>
+                    <h1 class="downloadappnow">Download our App Today to Get Started</h1>
+                    <br>
+                    <p class="div3Description">With the LifeFit app, you or your loved ones can order
+                        and request meals, <br> cleanings services and delivery 
+                        services. Additionally, this handy app <br> allows any free caregiver to take requests and 
+                        help schedule doctor <br>appointments, therapy sessions and more just a few clicks away.<br> 
+                    </p>
+                    <a href="https://www.apple.com/sg/app-store/">
+                        <img class="appstorelogoHomepage" src="img/app-store-badge.svg" alt="">
+                    </a>
+                    <a href="https://play.google.com">
+                        <img class="googleplaylogoHomepage" src="img/google-play-badge.svg" alt="">
+                    </a>             
+                    <br><br>
+                </td>
+
+                <td class="videoBig">
+                    <video width="400" height="300" loop="loop" autoplay="autoplay" muted="muted">
+                        <source src="img/hometherapy.mp4" type="video/mp4">
+                    </video>
+                    <br>
+
+                </td>
+                <td class="videoSmall">
+                    <video width="320" height="240" loop="loop" autoplay="autoplay" muted="muted">
+                        <source src="img/splashscreen.mp4" type="video/mp4">
+                    </video>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <br>
+        <p class="customerReview">What Our Customers Say</p> 
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img style="width:100%" src="img/review1.png" alt="" >                    
+            </div>
+
+            <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img style="width:100%" src="img/review2.png" alt="">
+            </div>
+
+            <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img style="width:100%" src="img/review3.png" alt="">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center;margin-top: 10px;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
+        <div class="div4">
+            <table>
+                <tr>
+                    <td class="caringPersonMarginLeft">
+                        <img class="caringPersonImage" src="img/caringperson.png" alt="">  
+                    </td>
+
+                    <td class="signUpNowMargin">
+                        <h3 class="personalized">Make Home Care Personalized to your <br>loved one's needs</h3>
+                        <p class="blackColour">Get started by signing up today</p>
+                        <br>
+                        <a href="https://github.com/xkvnxx/LifeFit">
+                            <div class="getAppButtondiv4">
+                                <h3 class="getAppButtondiv4Text"> Get Care Now </h3>
+                            </div>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class="FeedbacksContainer">
+        <h1>Give Us Your Feedback</h1>
+        <div class="StarRatings">
+            <input type="radio" id="5Stars" name="Rating" value="5"><label for="5Stars" class="full" title="Excellent"></label>
+            <input type="radio" id="4.5Stars" name="Rating" value="4.5"><label for="4.5Stars" class="half" title="Very Good"></label>
+            <input type="radio" id="4Stars" name="Rating" value="4"><label for="4Stars" class="full" title="Good"></label>
+            <input type="radio" id="3.5Stars" name="Rating" value="3.5"><label for="3.5Stars" class="half" title="Above Average"></label>
+            <input type="radio" id="3Stars" name="Rating" value="3"><label for="3Stars" class="full" title="Fair"></label>
+            <input type="radio" id="2.5Stars" name="Rating" value="2.5"><label for="2.5Stars" class="half" title="Below Average"></label>
+            <input type="radio" id="2Stars" name="Rating" value="2"><label for="2Stars" class="full" title="Poor"></label>
+            <input type="radio" id="1.5Stars" name="Rating" value="1.5"><label for="1.5Stars" class="half" title="Very Poor"></label>
+            <input type="radio" id="1Stars" name="Rating" value="1"><label for="1Stars" class="full" title="Terrible"></label>
+            <input type="radio" id="0.5Stars" name="Rating" value="0.5"><label for="0.5Stars" class="half" title="Horrendous"></label>
+        </div>
+        <textarea class="FeedbackText" name="Feedback" id="FeedbackText"></textarea>
+        <button class="SubmitFeedback" id="SubmitFeedback">Submit</button>
+    </div>
+    <script>
+        showSlides(slideIndex);//to make the slideshow visible as soon as the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('LoggedIn');
+            if (isLoggedIn === 'CareRecipientIN') {
+              document.querySelector('.FeedbacksContainer').style.display = 'flex';
+              document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }else if (isLoggedIn === 'CareGiverIN'){
+                document.querySelector('.FeedbacksContainer').style.display = 'flex';
+                document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }
+          });
+          
+    </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+
+        const firebaseConfig = {
+
+          apiKey: "AIzaSyA_SUMMwL5908zoqMseVcyZ6PmAdN73UYE",
+          authDomain: "lifefit-c080f.firebaseapp.com",
+          databaseURL: "https://lifefit-c080f-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "lifefit-c080f",
+          storageBucket: "lifefit-c080f.appspot.com",
+          messagingSenderId: "985989767102",
+          appId: "1:985989767102:web:7e102f501662b62dc2e3ef",
+          measurementId: "G-VV0YRRE3R7"
+
+        };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+
+        import { getDatabase, ref, set, child, update, remove, get, }
+          from "https://www.gstatic.com/firebasejs/10.1.0/firebase-database.js";
+
+        const db = getDatabase();
+        
+        var ratingInputs = document.querySelectorAll('.StarRatings input[name="Rating"]');
+        var UserRating;
+            ratingInputs.forEach((input) => {
+            input.addEventListener('change', () => {
+              UserRating = input.value;
+            });
+          });
+        var WhoIN = sessionStorage.getItem('LoggedIn');
+        var UserPassword = sessionStorage.getItem('LoggedInUserPassword');
+        var UserEmail = sessionStorage.getItem('LoggedInUserEmail');
+        var UserFeedbacks = document.getElementById("FeedbackText");
+        var SubmitUserFeedbackButton = document.getElementById("SubmitFeedback");
+        var UserName;
+        if (WhoIN === 'CareRecipientIN') {
+            const userRef = ref(db, "Carerecipients/" + UserPassword);
+            
+            get(userRef).then((snapshot) => {
+              if (snapshot.exists()) {
+                const userData = snapshot.val();
+                UserName = userData.username;
+              } else {
+                alert("User data not found");
+              }
+            }).catch((error) => {
+              alert("Error getting user data:" + error);
+            });
+        }else if (WhoIN === 'CareGiverIN'){
+            const userRef = ref(db, "Caregivers/" + UserPassword);
+            
+            get(userRef).then((snapshot) => {
+              if (snapshot.exists()) {
+                const userData = snapshot.val();
+                UserName = userData.username;
+              } else {
+                alert("User data not found");
+              }
+            }).catch((error) => {
+              alert("Error getting user data:" + error);
+            });  
+        }
+        
+        export function SendingFeedback() {
+            if (WhoIN === 'CareRecipientIN') {
+              set(ref(db, "Carerecipients/" + UserPassword), {
+              username: UserName,
+              password: UserPassword,
+              email: UserEmail,
+              rating: UserRating,
+              feedback: UserFeedbacks.value
+            })
+              .then(() => {
+                alert("Feedback Submit!");
+                UserFeedbacks.value = "";
+                ratingInputs.forEach((input) => {
+                    input.checked = false;
+                  });
+              })
+              .catch((error) => {
+                alert("unsuccessful, error" + error);
+              });
+            }else if (WhoIN === 'CareGiverIN'){
+                
+                set(ref(db, "Caregivers/" + UserPassword), {
+                username: UserName,
+                password: UserPassword,
+                email: UserEmail,
+                rating: UserRating,
+                feedback: UserFeedbacks.value
+              })
+                .then(() => {
+                  alert("Feedback Submit!");
+                  UserFeedbacks.value = "";
+                  ratingInputs.forEach((input) => {
+                      input.checked = false;
+                    });
+                })
+                .catch((error) => {
+                  alert("unsuccessful, error" + error);
+                });
+              }
+        }
+        
+        function getAvgRatings() {
+            const caregivingRef = ref(db, 'Caregivers');
+            const receivingRef = ref(db, 'Carerecipients');
+
+            const caregivingPromise = get(caregivingRef);
+            const receivingPromise = get(receivingRef);
+
+            Promise.all([caregivingPromise, receivingPromise]).then((snapshots) => {
+                const caregivingSnapshot = snapshots[0];
+                const receivingSnapshot = snapshots[1];
+
+                if (caregivingSnapshot.exists() || receivingSnapshot.exists()) {
+                    let totalRatings = 0;
+                    let numRatings = 0;
+
+                    // Function to check if a value is a valid number
+                    const isValidNumber = (value) => {
+                        return !isNaN(parseFloat(value)) && isFinite(value);
+                    };
+
+                    // Loop through caregiving ratings and calculate total and count
+                    if (caregivingSnapshot.exists()) {
+                        const caregivingData = caregivingSnapshot.val();
+                        for (const userId in caregivingData) {
+                            const Rating = caregivingData[userId].rating;
+                            if (isValidNumber(Rating)) {
+                                totalRatings += parseFloat(Rating);
+                                numRatings++;
+                            }
+                        }
+                    }
+
+                    // Loop through receiving ratings and calculate total and count
+                    if (receivingSnapshot.exists()) {
+                        const receivingData = receivingSnapshot.val();
+                        for (const userId in receivingData) {
+                            const Rating = receivingData[userId].rating;
+                            if (isValidNumber(Rating)) {
+                                totalRatings += parseFloat(Rating);
+                                numRatings++;
+                            }
+                        }
+                    }
+
+                    // Calculate average rating
+                    const averageRating = totalRatings / numRatings;
+                    document.getElementById("avgRating").innerHTML = averageRating.toFixed(1);
+
+                } else {
+                    console.log("No user data found");
+                }
+            }).catch((error) => {
+                console.log("Error getting user data:", error);
+            });
+        }
+        getAvgRatings();
+        
+        SubmitUserFeedbackButton.addEventListener('click', () => {
+        let selectedRating = false;
+        ratingInputs.forEach((input) => {
+            if (input.checked) {
+                selectedRating = true;
+            }
+        });
+
+        if (!selectedRating) {
+            alert("Please select a rating before submitting feedback.");
+            return;
+        }
+
+        SendingFeedback();
+    });
+    </script>
+</body>
+</html>

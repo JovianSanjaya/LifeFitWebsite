@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>HealthCare</title>
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="ProjectScript.js"></script> 
+    </head>
+    <body>
+        <div class="nav">
+        <div class="navUpper">
+            <div class="logo">
+                <a class="GoHomeLink" href="ProjectMainPage.html">
+                    <img class="navLogo" src="img/logo.png" alt="">
+                    <h1 class="textLogo">LifeFit</h1>
+                </a>
+            </div>
+            <div class="btnlinks">
+                <div class="contactInfo">
+                    <img id="contactLogo" src="img/phoneicon.png" alt="">93597765
+                </div>
+                <a href="ProjectLogin.html">
+                    <div class="LoginButton">
+                        <span class="LoginButtonText">Login</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <hr class="navSeparator">
+        <div class="navLower">
+            <a class="navBarAboutUs" href="ProjectAboutUsPage.html">About Us</a>
+            <a class="navBarOurServices" href="ProjectOurServicesPage.html">Our Services</a>
+            <a class="navBarContactUs" href="ProjectContactUsPage.html">Contact Us</a>
+            <a class="navBarDiscussion" href="index.php" id="navBarDiscussion" hidden>Discussion</a>
+        </div>
+        </div>
+        <div class="AboutUsPage">
+            <h1 class="AboutUsTitle">About Us</h1>
+            <p class="AboutUsDescription">Making the world a more caring place. Expert, flexible and personalized home and nursing care so all can continue to live well and <br> independently at home.</p>
+        </div>
+        <div class="WavyCurve2">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="OurStory">
+            <h1 class="OurStoryTitle">Our Story</h1>
+            <p class="OurStoryDescription">LifeFit is a personal care app that integrates smart technology and community-based caregiving to the ones needed. Not only does it offer features to enhance the convenience of the users, but it also connects the caregiver and the recipients.It offers a modern care management app for personalized home therapy, nursing, personal care, and doctor visits. It is user-friendly, secure, and efficient to help the users get their cares more convenient.</p>
+        </div>
+        <div class="OurAwards">
+            <h1 class="OurAwardsTitle">Our Awards</h1>
+            <img class="OurAwardsImage" src="img/AwardsImage.png" alt=""/>
+        </div>
+        <div class="OurDevelopers">
+            <h1 class="OurDevelopersTitle">Our Developers</h1>
+            <div class="DevelopersInfomationContainer">
+                <div class="DevelopersInfomationCard">
+                    <img class="DeveloperImage" src="img/JovianPicture.png" alt=""/>
+                    <p class="DeveloperName">Jovian Sanjaya Putra</p>
+                    <p class="DeveloperAdminNumber">P2233570</p>
+                </div>
+                <div class="DevelopersInfomationCard">
+                    <img class="DeveloperImage" src="img/RaisaPicture.png" alt=""/>
+                    <p class="DeveloperName">Raisa Anil Oommen</p>
+                    <p class="DeveloperAdminNumber">P2222093</p>
+                </div>
+                <div class="DevelopersInfomationCard">
+                    <img class="DeveloperImage" src="img/JinHoePicture.png" alt=""/>
+                    <p class="DeveloperName">Ong Jin Hoe</p>
+                    <p class="DeveloperAdminNumber">P2220835</p>
+                </div>
+                <div class="DevelopersInfomationCard">
+                    <img class="DeveloperImage" src="img/JoshuaPicture.png" alt=""/>
+                    <p class="DeveloperName">Joshua Jed Sarmiento Abiog</p>
+                    <p class="DeveloperAdminNumber">P2221737</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = sessionStorage.getItem('LoggedIn');
+            if (isLoggedIn === 'CareRecipientIN') {
+              document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }else if (isLoggedIn === 'CareGiverIN'){
+                document.getElementById("navBarDiscussion").removeAttribute('hidden');
+            }
+          });
+        </script>
+    </body>
+</html>
